@@ -1,0 +1,82 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        //使用asXxx方法时必须，传入你依赖的RxJava版本
+                        rxhttp_rxjava: '3.1.1',
+                        rxhttp_package: 'rxhttp',  //指定RxHttp类包名，可随意指定
+                ]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    viewBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    api 'androidx.recyclerview:recyclerview:1.1.0-beta05'
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    api 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+
+    api 'com.github.chrisbanes:PhotoView:2.3.0'
+
+    api 'com.blankj:utilcodex:1.30.6'
+
+//    api 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+//    api 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+
+    api 'com.squareup.okhttp3:okhttp:4.9.1'
+    api 'com.github.liujingxing.rxhttp:rxhttp:2.7.2'
+    annotationProcessor 'com.github.liujingxing.rxhttp:rxhttp-compiler:2.7.2' //生成RxHttp类，纯Java项目，请使用annotationProcessor代替kapt
+
+    api 'io.reactivex.rxjava3:rxjava:3.1.1'
+    api 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    api 'com.github.liujingxing.rxlife:rxlife-rxjava3:2.2.1' //管理RxJava3生命周期，页面销毁，关闭请求
+
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
+    api 'com.contrarywind:Android-PickerView:4.1.9'
+
+    api 'androidx.multidex:multidex:2.0.1'
+
+    api 'org.greenrobot:eventbus:3.1.1'
+}

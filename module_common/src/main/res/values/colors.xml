@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="refresh">
+        <item>#23caa9</item>
+        <item>#ca23a9</item>
+        <item>#a9ca23</item>
+        <item>#23456a</item>
+    </array>
+    <color name="background">#F7F4F0</color>
+    <color name="colorAccent">#00574B</color>
+    <color name="colorAccent_red">#963838</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="color_aliceblue">#f0f8ff</color>
+    <color name="color_antiquewhite">#faebd7</color>
+    <color name="color_aqua">#00ffff</color>
+    <color name="color_aquamarine">#7fffd4</color>
+    <color name="color_azure">#f0ffff</color>
+    <color name="color_beige">#f5f5dc</color>
+    <color name="color_bg_fa">#fafafa</color>
+    <color name="color_bg_ff">#ffffff</color>
+    <color name="color_bisque">#ffe4c4</color>
+    <color name="color_black">#000000</color>
+    <color name="color_blanchedalmond">#ffebcd</color>
+    <color name="color_blue">#0000ff</color>
+    <color name="color_blueviolet">#8a2be2</color>
+    <color name="color_brown">#a52a2a</color>
+    <color name="color_btn_">#24679b</color>
+    <color name="color_btn_click">#78b2df</color>
+    <color name="color_burlywood">#deb887</color>
+    <color name="color_cadetblue">#5f9ea0</color>
+    <color name="color_chartreuse">#7fff00</color>
+    <color name="color_chocolate">#d2691e</color>
+    <color name="color_content">#666666</color>
+    <color name="color_coral">#ff7f50</color>
+    <color name="color_cornflowerblue">#6495ed</color>
+    <color name="color_cornsilk">#fff8dc</color>
+    <color name="color_crimson">#dc143c</color>
+    <color name="color_cyan">#00ffff</color>
+    <color name="color_darkblue">#00008b</color>
+    <color name="color_darkcyan">#008b8b</color>
+    <color name="color_darkgoldenrod">#b8860b</color>
+    <color name="color_darkgray">#a9a9a9</color>
+    <color name="color_darkgreen">#006400</color>
+    <color name="color_darkgrey">#a9a9a9</color>
+    <color name="color_darkkhaki">#bdb76b</color>
+    <color name="color_darkmagenta">#8b008b</color>
+    <color name="color_darkolivegreen">#556b2f</color>
+    <color name="color_darkorange">#ff8c00</color>
+    <color name="color_darkorchid">#9932cc</color>
+    <color name="color_darkred">#8b0000</color>
+    <color name="color_darksalmon">#e9967a</color>
+    <color name="color_darkseagreen">#8fbc8f</color>
+    <color name="color_darkslateblue">#483d8b</color>
+    <color name="color_darkslategray">#2f4f4f</color>
+    <color name="color_darkslategrey">#2f4f4f</color>
+    <color name="color_darkturquoise">#00ced1</color>
+    <color name="color_darkviolet">#9400d3</color>
+    <color name="color_deeppink">#ff1493</color>
+    <color name="color_deepskyblue">#00bfff</color>
+    <color name="color_dimgray">#696969</color>
+    <color name="color_dimgrey">#696969</color>
+    <color name="color_dodgerblue">#1e90ff</color>
+    <color name="color_filter_item_">#0c0e20</color>
+    <color name="color_filter_item_select">#5b9ac5</color>
+    <color name="color_firebrick">#b22222</color>
+    <color name="color_floralwhite">#fffaf0</color>
+    <color name="color_forestgreen">#228b22</color>
+    <color name="color_fuchsia">#ff00ff</color>
+    <color name="color_gainsboro">#dcdcdc</color>
+    <color name="color_ghostwhite">#f8f8ff</color>
+    <color name="color_gold">#ffd700</color>
+    <color name="color_goldenrod">#daa520</color>
+    <color name="color_gray">#808080</color>
+    <color name="color_green">#008000</color>
+    <color name="color_greenyellow">#adff2f</color>
+    <color name="color_grey">#808080</color>
+    <color name="color_honeydew">#f0fff0</color>
+    <color name="color_hotpink">#ff69b4</color>
+    <color name="color_indianred">#cd5c5c</color>
+    <color name="color_indigo">#4b0082</color>
+    <color name="color_ivory">#fffff0</color>
+    <color name="color_khaki">#f0e68c</color>
+    <color name="color_lavender">#e6e6fa</color>
+    <color name="color_lavenderblush">#fff0f5</color>
+    <color name="color_lawngreen">#7cfc00</color>
+    <color name="color_lemonchiffon">#fffacd</color>
+    <color name="color_lightblue">#add8e6</color>
+    <color name="color_lightcoral">#f08080</color>
+    <color name="color_lightcyan">#e0ffff</color>
+    <color name="color_lightgoldenrodyellow">#fafad2</color>
+    <color name="color_lightgray">#d3d3d3</color>
+    <color name="color_lightgreen">#90ee90</color>
+    <color name="color_lightgrey">#d3d3d3</color>
+    <color name="color_lightpink">#ffb6c1</color>
+    <color name="color_lightsalmon">#ffa07a</color>
+    <color name="color_lightseagreen">#20b2aa</color>
+    <color name="color_lightskyblue">#87cefa</color>
+    <color name="color_lightslategray">#778899</color>
+    <color name="color_lightslategrey">#778899</color>
+    <color name="color_lightsteelblue">#b0c4de</color>
+    <color name="color_lightyellow">#ffffe0</color>
+    <color name="color_lime">#00ff00</color>
+    <color name="color_limegreen">#32cd32</color>
+    <color name="color_line">#dbdbdb</color>
+    <color name="color_linen">#faf0e6</color>
+    <color name="color_magenta">#ff00ff</color>
+    <color name="color_maroon">#800000</color>
+    <color name="color_mediumaquamarine">#66cdaa</color>
+    <color name="color_mediumblue">#0000cd</color>
+    <color name="color_mediumorchid">#ba55d3</color>
+    <color name="color_mediumpurple">#9370db</color>
+    <color name="color_mediumseagreen">#3cb371</color>
+    <color name="color_mediumslateblue">#7b68ee</color>
+    <color name="color_mediumspringgreen">#00fa9a</color>
+    <color name="color_mediumturquoise">#48d1cc</color>
+    <color name="color_mediumvioletred">#c71585</color>
+    <color name="color_midnightblue">#191970</color>
+    <color name="color_mintcream">#f5fffa</color>
+    <color name="color_mistyrose">#ffe4e1</color>
+    <color name="color_moccasin">#ffe4b5</color>
+    <color name="color_name">#333333</color>
+    <color name="color_navajowhite">#ffdead</color>
+    <color name="color_navy">#000080</color>
+    <color name="color_oldlace">#fdf5e6</color>
+    <color name="color_olive">#808000</color>
+    <color name="color_olivedrab">#6b8e23</color>
+    <color name="color_orange">#ffa500</color>
+    <color name="color_orangered">#ff4500</color>
+    <color name="color_orchid">#da70d6</color>
+    <color name="color_palegoldenrod">#eee8aa</color>
+    <color name="color_palegreen">#98fb98</color>
+    <color name="color_paleturquoise">#afeeee</color>
+    <color name="color_palevioletred">#db7093</color>
+    <color name="color_papayawhip">#ffefd5</color>
+    <color name="color_peachpuff">#ffdab9</color>
+    <color name="color_peru">#cd853f</color>
+    <color name="color_pink">#ffc0cb</color>
+    <color name="color_plum">#dda0dd</color>
+    <color name="color_powderblue">#b0e0e6</color>
+    <color name="color_purple">#800080</color>
+    <color name="color_red">#ff0000</color>
+    <color name="color_rosybrown">#bc8f8f</color>
+    <color name="color_royalblue">#4169e1</color>
+    <color name="color_saddlebrown">#8b4513</color>
+    <color name="color_salmon">#fa8072</color>
+    <color name="color_sandybrown">#f4a460</color>
+    <color name="color_seaShell">#fff5ee</color>
+    <color name="color_seagreen">#2e8b57</color>
+    <color name="color_sienna">#a0522d</color>
+    <color name="color_silver">#c0c0c0</color>
+    <color name="color_skyblue">#87ceeb</color>
+    <color name="color_slateblue">#6a5acd</color>
+    <color name="color_slategray">#708090</color>
+    <color name="color_slategrey">#708090</color>
+    <color name="color_snow">#fffafa</color>
+    <color name="color_springgreen">#00ff7f</color>
+    <color name="color_ssk_item_bg_">#ffffff</color>
+    <color name="color_ssk_item_bg_select">#f5f5f5</color>
+    <color name="color_steelblue">#4682b4</color>
+    <color name="color_tan">#d2b48c</color>
+    <color name="color_teal">#008080</color>
+    <color name="color_thistle">#d8bfd8</color>
+    <color name="color_tomato">#ff6347</color>
+    <color name="color_transparent">#00000000</color>
+    <color name="color_transparent_half">#66000000</color>
+    <color name="color_turquoise">#40e0d0</color>
+    <color name="color_violet">#ee82ee</color>
+    <color name="color_wheat">#f5deb3</color>
+    <color name="color_white">#ffffff</color>
+    <color name="color_whitesmoke">#f5f5f5</color>
+    <color name="color_yellow">#ffff00</color>
+    <color name="color_zhuse">#5b9ac5</color>
+    <color name="colorblack">#000000</color>
+    <color name="colorblue">#719bf1</color>
+    <color name="colorgray">#888888</color>
+    <color name="colorred">#ff0000</color>
+    <color name="colorwhite">#ffffff</color>
+    <color name="coloryellow">#f1a923</color>
+    <color name="dialog_contentBgColor">#eeeeee</color>
+    <color name="dialog_content_bg">#eeeeee</color>
+    <color name="dialog_dividerColor">#5b9ac5</color>
+    <color name="dialog_line_bg">#fafafa</color>
+    <color name="dialog_textCancelColor">#666666</color>
+    <color name="dialog_textConfirmColor">#5b9ac5</color>
+    <color name="dialog_textNoSelectItemColor">#aaaaaa</color>
+    <color name="dialog_textSelectItemColor">#5b9ac5</color>
+    <color name="dialog_textTitleColor">#333333</color>
+    <color name="dialog_textcolor">#333333</color>
+    <color name="dialog_textcolor_ts">#666666</color>
+    <color name="dialog_titleBgColor">#ffffff</color>
+    <color name="dialog_white">#ffffff</color>
+    <color name="dialog_zhuse">#5b9ac5</color>
+    <color name="filter_all_bg">#44888888</color>
+    <color name="filter_item_bg">#ffffff</color>
+    <color name="filter_item_select_bg">#e1e1e1</color>
+    <color name="filter_item_select_textcolor">#333333</color>
+    <color name="filter_item_textcolor">#666666</color>
+    <color name="filter_tab_bg">#ffffff</color>
+    <color name="filter_tab_select_textcolor">#5b9ac5</color>
+    <color name="filter_tab_textcolor">#333333</color>
+    <color name="page_bg_color">#e1e1e1</color>
+    <color name="tab_bg">#ffffff</color>
+    <color name="tab_checked">#5b9ac5</color>
+    <color name="tab_unchecked">#757575</color>
+    <color name="tdialog_color_affirm">#333333</color>
+    <color name="tdialog_color_cancle">#666666</color>
+    <color name="tdialog_color_item">#222222</color>
+    <color name="tdialog_color_msg">#484848</color>
+    <color name="tdialog_color_title">#333333</color>
+    <color name="textcolor_black">#000000</color>
+    <color name="textcolor_check">#719BF1</color>
+    <color name="textcolor_nomal">#444444</color>
+    <color name="textcolor_point">#f17174</color>
+    <color name="textcolor_tishi">#a5abb8</color>
+    <color name="textcolor_uncheck">#69748B</color>
+    <color name="textcolor_white">#ffffff</color>
+    <color name="textcolor_yellow">#f1e271</color>
+    <color name="title_color">#333333</color>
+    <color name="translucence">#44000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="tswitch_bg_select">#5b9ac5</color>
+    <color name="tswitch_bg_select_no">#DFDFDF</color>
+    <color name="tswitch_outside">#a1a1a1</color>
+    <color name="tswitch_textcolor_select">#ffffff</color>
+    <color name="tswitch_textcolor_select_no">#333333</color>
+
+    <item name="glide_tag" type="id"/>
+
+    <declare-styleable name="DotView">
+        <!-- 点的大小 -->
+        <attr format="dimension" name="dotview_size"/>
+        <!-- 线条的宽度 -->
+        <attr format="dimension" name="dotview_line_size"/>
+        <!-- 空心点的宽度 -->
+        <attr format="dimension" name="dotview_hollow_width"/>
+        <!-- 点的颜色 -->
+        <attr format="color" name="dotview_color"/>
+        <!-- 线的颜色 -->
+        <attr format="color" name="dotview_color_line"/>
+        <!--&lt;!&ndash; 线的颜色 &ndash;&gt;-->
+        <!--<attr name="dotview_color_background" format="color"/>-->
+        <!-- 点的类型 -->
+        <attr name="dotview_type">
+            <flag name="blank" value="0x0000"/>
+            <flag name="fill" value="0x0001"/>
+            <flag name="hollow" value="0x0002"/>
+            <flag name="line_top" value="0x0004"/>
+            <flag name="line_bottom" value="0x0008"/>
+            <flag name="line_left" value="0x0010"/>
+            <flag name="line_right" value="0x0020"/>
+            <flag name="line_horizontal" value="0x0040"/>
+            <flag name="line_vertical" value="0x0080"/>
+        </attr>
+
+    </declare-styleable>
+    <declare-styleable name="RoundProgressbar">
+
+        <!-- 圆环的宽度 -->
+        <attr format="integer" name="ring_width"/>
+        <!-- 进度[0,1]） -->
+        <attr format="float" name="progress"/>
+        <!-- 内容 -->
+        <attr format="string" name="ring_text"/>
+
+        <!-- 内容大小 -->
+        <attr format="integer" name="ring_text_size"/>
+
+        <!-- 圆的底色 -->
+        <attr format="color" name="color_bg"/>
+        <!-- 圆的进度颜色 -->
+        <attr format="color" name="color_progress"/>
+        <!-- 内容颜色 -->
+        <attr format="color" name="color_text"/>
+
+    </declare-styleable>
+    <declare-styleable name="RoundTextView">
+
+        <!-- 圆环的宽度 -->
+        <attr format="integer" name="rtextview_width"/>
+        <!-- 进度[0,1]） -->
+        <attr format="float" name="rtextview_progress"/>
+
+        <!-- 圆的底色 -->
+        <attr format="color" name="rtextview_bg_color"/>
+        <!-- 圆的进度颜色 -->
+        <attr format="color" name="rtextview_progress_color"/>
+
+        <!-- 是否显示圆环 -->
+        <attr format="boolean" name="rtextview_show"/>
+
+    </declare-styleable>
+    <declare-styleable name="SidebarView2">
+        <!-- 点击时的背景色 -->
+        <attr format="color" name="sv2_bg_click_color"/>
+        <!-- 文字的颜色 -->
+        <attr format="color" name="sv2_text_color"/>
+        <!-- 文字点击时的颜色 -->
+        <attr format="color" name="sv2_text_click_color"/>
+        <!-- 文字大小 -->
+        <attr format="dimension" name="sv2_text_size"/>
+        <!-- 用于设置分割单元的个数：默认为26 -->
+        <attr format="integer" name="sv2_min_len"/>
+    </declare-styleable>
+    <declare-styleable name="StarBarView">
+        <!--设置星星间的间隔-->
+        <attr format="dimension" name="space_width"/>
+        <!--星星间宽度-->
+        <attr format="dimension" name="star_width"/>
+        <!--星星间高度-->
+        <attr format="dimension" name="star_height"/>
+        <!--最大数量-->
+        <attr format="integer" name="star_max"/>
+        <!--选中数量-->
+        <attr format="float" name="star_rating"/>
+        <!--未选中图片-->
+        <attr format="reference" name="star_hollow"/>
+        <!--选中图片-->
+        <attr format="reference" name="star_solid"/>
+        <!--是否可以滑动改变选中数量-->
+        <attr format="boolean" name="star_isIndicator"/>
+        <!--排列方向-->
+        <attr format="enum" name="star_orientation">
+            <enum name="vertical" value="1"/>
+            <enum name="horizontal" value="0"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="TRoundImageView">
+        <attr format="dimension" name="radius"/>
+        <attr format="dimension" name="left_top_radius"/>
+        <attr format="dimension" name="right_top_radius"/>
+        <attr format="dimension" name="right_bottom_radius"/>
+        <attr format="dimension" name="left_bottom_radius"/>
+    </declare-styleable>
+</resources>

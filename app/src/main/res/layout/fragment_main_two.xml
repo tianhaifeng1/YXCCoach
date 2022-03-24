@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_whitesmoke"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="#FFFFFF"
+        android:paddingTop="@dimen/dp25"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp75">
+        <LinearLayout
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginRight="@dimen/dp15"
+            android:background="@drawable/gray_20"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40">
+            <ImageView
+                android:layout_marginLeft="@dimen/dp5"
+                android:layout_width="@dimen/dp40"
+                android:layout_height="match_parent"
+                android:padding="@dimen/dp10"
+                android:src="@drawable/fdj" />
+            <EditText
+                android:layout_marginRight="@dimen/dp10"
+                android:id="@+id/two_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:gravity="center_vertical"
+                android:hint="请输入考场名称进行搜索"
+                android:inputType="text"
+                android:textSize="13sp"
+                android:maxLines="1" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="考场推荐"
+            android:textColor="#333333"
+            android:textSize="15sp"/>
+
+        <LinearLayout
+            android:layout_marginRight="@dimen/dp15"
+            android:background="@drawable/orange_wk_15"
+            android:gravity="center_vertical"
+            android:layout_width="@dimen/dp100"
+            android:layout_height="@dimen/dp20">
+            <TextView
+                android:gravity="right"
+                android:layout_marginLeft="@dimen/dp5"
+                android:layout_width="@dimen/dp75"
+                android:layout_height="wrap_content"
+                android:text="训练场次"
+                android:textColor="#ffa12d"
+                android:textSize="12sp"/>
+            <ImageView
+                android:layout_marginLeft="@dimen/dp5"
+                android:src="@drawable/main_xia"
+                android:layout_width="10dp"
+                android:layout_height="6dp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_marginLeft="@dimen/dp13"
+        android:layout_marginRight="@dimen/dp13"
+        android:id="@+id/one_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

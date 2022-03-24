@@ -8,6 +8,11 @@
     tools:context=".activity.LoginActivity">
 
     <LinearLayout
+        android:background="@drawable/login_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp140"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
@@ -16,17 +21,22 @@
         <ImageView
             android:layout_width="@dimen/dp70"
             android:layout_height="@dimen/dp70"
-            android:layout_marginTop="@dimen/dp100"
+            android:layout_marginTop="@dimen/dp90"
             android:src="@drawable/logo" />
+
+        <ImageView
+            android:layout_width="@dimen/dp70"
+            android:layout_height="@dimen/dp70"
+            android:src="@drawable/login_title" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp20"
             android:text="西 部 互 联 网 驾 校 领 先 品 牌"
             android:textColor="#999999" />
 
         <EditText
+            android:id="@+id/login_edit_phone"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp50"
             android:layout_marginLeft="@dimen/dp30"
@@ -49,6 +59,7 @@
             android:background="@drawable/grey_4">
 
             <EditText
+                android:id="@+id/login_edit_yzm"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/dp50"
                 android:layout_weight="1"
@@ -61,6 +72,7 @@
                 android:textSize="@dimen/sp14" />
 
             <TextView
+                android:id="@+id/login_yzm"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -71,6 +83,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/login_submit"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp50"
             android:layout_marginLeft="@dimen/dp30"
@@ -83,6 +96,7 @@
             android:textSize="@dimen/sp18" />
 
         <TextView
+            android:id="@+id/login_register"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/dp40"
             android:layout_gravity="right"
@@ -103,6 +117,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <ImageView
+            android:id="@+id/login_xy"
             android:padding="@dimen/dp5"
             android:src="@drawable/login_yes"
             android:layout_width="@dimen/dp30"
@@ -114,6 +129,7 @@
             android:text="我已阅读并同意"
             android:textColor="#4a4b4d"/>
         <TextView
+            android:id="@+id/login_yhxy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="《易学车用户协议》"

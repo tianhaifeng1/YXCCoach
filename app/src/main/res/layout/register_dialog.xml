@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center_horizontal"
+    android:layout_marginLeft="@dimen/dp38"
+    android:layout_marginRight="@dimen/dp38"
+    android:orientation="vertical"
+    tools:viewBindingIgnore="true"
+    android:background="@drawable/white_5">
+
+    <ImageView
+        android:layout_marginTop="@dimen/dp20"
+        android:src="@drawable/register_yes"
+        android:layout_width="@dimen/dp33"
+        android:layout_height="@dimen/dp33"/>
+
+    <TextView
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="提交成功"
+        android:textStyle="bold"
+        android:textColor="#ffa12d"
+        android:textSize="17sp"/>
+
+    <TextView
+        android:layout_marginLeft="@dimen/dp45"
+        android:layout_marginRight="@dimen/dp45"
+        android:layout_marginTop="@dimen/dp30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="注册信息已提交，请等待平台审核后即可登录使用"
+        android:textColor="#333333"/>
+
+    <TextView
+        android:id="@+id/register_dialog_submit"
+        android:background="@drawable/orange_15"
+        android:layout_marginBottom="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp15"
+        android:gravity="center"
+        android:layout_width="@dimen/dp100"
+        android:layout_height="@dimen/dp30"
+        android:text="返回登录"
+        android:textStyle="bold"
+        android:textColor="#ffffff"/>
+</LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/nav_bottom_item1"
+        android:icon="@drawable/footnav1"
+        android:title="科二" />
+    <item
+        android:id="@+id/nav_bottom_item2"
+        android:icon="@drawable/footnav2"
+        android:title="科三" />
+    <item
+        android:id="@+id/nav_bottom_item3"
+        android:icon="@drawable/footnav3"
+        android:title="订单" />
+    <item
+        android:id="@+id/nav_bottom_item4"
+        android:icon="@drawable/footnav4"
+        android:title="我的" />
+
+</menu>

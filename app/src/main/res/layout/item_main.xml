@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_10"
+    android:layout_marginBottom="@dimen/dp10"
+    tools:viewBindingIgnore="true">
+
+    <ImageView
+        android:layout_marginTop="@dimen/dp20"
+        android:layout_marginBottom="@dimen/dp25"
+        android:layout_marginLeft="@dimen/dp10"
+        android:src="@drawable/logo"
+        android:layout_width="@dimen/dp75"
+        android:layout_height="@dimen/dp75"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/dp15"
+        android:layout_marginLeft="@dimen/dp14"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="西安市社会化三隆科目二考场"
+            android:textColor="#333333"
+            android:textSize="15sp" />
+        <TextView
+            android:background="#fff2e7"
+            android:layout_marginTop="@dimen/dp5"
+            android:paddingLeft="@dimen/dp8"
+            android:paddingRight="@dimen/dp8"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp21"
+            android:text="训练场次：2022-03-20"
+            android:textColor="#ffa12d"/>
+        <TextView
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="考场地址：未央区龙首原印象城"
+            android:textColor="#444444"
+            android:textSize="11sp"/>
+
+        <TextView
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginTop="@dimen/dp5"
+            android:layout_marginRight="@dimen/dp10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="练车时间：考试前三天"
+            android:textColor="#444444"
+            android:textSize="11sp"/>
+    </LinearLayout>
+
+</LinearLayout>

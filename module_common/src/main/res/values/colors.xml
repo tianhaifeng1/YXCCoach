@@ -201,7 +201,7 @@
     <color name="filter_tab_textcolor">#333333</color>
     <color name="page_bg_color">#e1e1e1</color>
     <color name="tab_bg">#ffffff</color>
-    <color name="tab_checked">#5b9ac5</color>
+    <color name="tab_checked">#ffa12d</color>
     <color name="tab_unchecked">#757575</color>
     <color name="tdialog_color_affirm">#333333</color>
     <color name="tdialog_color_cancle">#666666</color>

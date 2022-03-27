@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.module_common.official.OfficialMVPFragment;
+import com.lovezly.coach.activity.personal.UserInfoActivity;
 import com.lovezly.coach.databinding.FragmentMainFourBinding;
 import com.lovezly.coach.databinding.FragmentMainOneBinding;
 
@@ -32,6 +33,6 @@ public class MainFourFragment extends OfficialMVPFragment<FragmentView, Fragment
 
     @Override
     protected void initFragmentView(View view) {
-
+        mBinding.fourHeadRel.setOnClickListener(view1 -> activity.skipActivity(UserInfoActivity.class));
     }
 }

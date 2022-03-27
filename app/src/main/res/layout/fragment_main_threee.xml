@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/color_whitesmoke"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp75"
+        android:background="#FFFFFF"
+        android:paddingTop="@dimen/dp25">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginRight="@dimen/dp15"
+            android:background="@drawable/gray_20">
+
+            <ImageView
+                android:layout_width="@dimen/dp40"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp5"
+                android:padding="@dimen/dp10"
+                android:src="@drawable/fdj" />
+
+            <EditText
+                android:id="@+id/two_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/dp10"
+                android:background="@color/transparent"
+                android:gravity="center_vertical"
+                android:hint="请输入学员姓名/考场名称进行搜索"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayout"
+        app:tabIndicatorColor="#ffa12d"
+        app:tabIndicatorFullWidth="false"
+        app:tabRippleColor="@color/transparent"
+        android:background="#FFFFFF"
+        app:tabSelectedTextColor="#ffa12d"
+        app:tabTextColor="#444444"
+        android:layout_width="match_parent"
+        android:layout_height="44dp" />
+
+<!--    <com.scwang.smart.refresh.layout.SmartRefreshLayout-->
+<!--        android:id="@+id/smart_refresh"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_whitesmoke" />
+
+<!--    </com.scwang.smart.refresh.layout.SmartRefreshLayout>-->
 
 </LinearLayout>

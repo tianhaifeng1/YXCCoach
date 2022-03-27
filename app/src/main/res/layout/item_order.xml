@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp12"
+    android:layout_marginRight="@dimen/dp12"
+    android:layout_marginTop="@dimen/dp10"
+    android:orientation="vertical"
+    android:background="@drawable/white_10">
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+        <TextView
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/dp10"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="西安市社会化三隆科目二考场"
+            android:textColor="#333333"
+            android:textSize="14sp"/>
+        <TextView
+            android:layout_marginRight="@dimen/dp15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="已支付"
+            android:textColor="#ffa12d"/>
+    </LinearLayout>
+
+    <View
+        android:layout_marginLeft="@dimen/dp12"
+        android:layout_marginRight="@dimen/dp12"
+        android:background="#f5f5f5"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginLeft="@dimen/dp11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="订单编号："
+            android:textColor="#999999"/>
+
+        <TextView
+            android:layout_marginRight="@dimen/dp11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="202203140021"
+            android:textColor="#444444"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginLeft="@dimen/dp11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="考试日期："
+            android:textColor="#999999"/>
+
+        <TextView
+            android:layout_marginRight="@dimen/dp11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2022-03-12 08:00"
+            android:textColor="#444444"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginLeft="@dimen/dp11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="考试学员："
+            android:textColor="#999999"/>
+
+        <TextView
+            android:layout_marginRight="@dimen/dp11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="刘佳佳、王珊珊、赵一一、李思思..."
+            android:textColor="#444444"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginLeft="@dimen/dp11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="付款时间："
+            android:textColor="#999999"/>
+
+        <TextView
+            android:layout_marginRight="@dimen/dp11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2022-03-12 08:00"
+            android:textColor="#444444"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginBottom="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginLeft="@dimen/dp11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="费用合计："
+            android:textColor="#999999"/>
+
+        <TextView
+            android:layout_marginRight="@dimen/dp11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥620.00"
+            android:textColor="#ffa12d"/>
+    </LinearLayout>
+</LinearLayout>

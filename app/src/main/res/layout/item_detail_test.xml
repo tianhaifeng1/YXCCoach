@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_10"
+    android:layout_marginBottom="@dimen/dp10">
+
+        <ImageView
+            android:id="@+id/item_detail_test_image"
+            android:layout_width="@dimen/dp75"
+            android:layout_height="@dimen/dp75"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp15"
+            android:layout_marginBottom="@dimen/dp25"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp14"
+            android:layout_marginTop="@dimen/dp10">
+
+            <TextView
+                android:id="@+id/item_driving_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxWidth="@dimen/dp120"
+                android:maxLines="1"
+                android:text="强训练车服务"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/item_driving_ok"
+                android:layout_width="@dimen/dp65"
+                android:layout_height="@dimen/dp25"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp7"
+                android:background="@drawable/orange_13"
+                android:gravity="center"
+                android:text="立即购买"
+                android:textColor="#ffffff"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/item_driving_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_driving_title"
+                android:layout_marginTop="@dimen/dp8"
+                android:layout_marginRight="@dimen/dp80"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="西安市社会化三隆科目三考场"
+                android:textColor="#444444"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/item_driving_site"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_driving_name"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginRight="@dimen/dp10"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="训练场次：2022-03-12 "
+                android:textColor="#444444"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/item_driving_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_driving_site"
+                android:layout_marginTop="@dimen/dp5"
+                android:text="￥120.00/人"
+                android:textColor="#ffa12d"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_marginBottom="@dimen/dp1"
+                android:id="@+id/item_driving_dlprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/item_driving_price"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_toRightOf="@+id/item_driving_price"
+                android:text="代理商价格：￥80/人"
+                android:textColor="#ffa12d"
+                android:textSize="10sp" />
+        </RelativeLayout>
+</LinearLayout>

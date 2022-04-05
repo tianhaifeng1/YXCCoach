@@ -74,7 +74,7 @@ public abstract class NavBottomActivity extends InitActivity implements BottomNa
         mBottomNavView = findViewById(R.id.bottom_nav_view);
         mViewpager = findViewById(R.id.viewpager);
         mViewpager.setScanScroll(false);
-        mViewpager.setDescendantFocusability(ViewGroup.FOCUS_BLOCK_DESCENDANTS);
+        mViewpager.setDescendantFocusability(ViewGroup.FOCUS_AFTER_DESCENDANTS);
 
         mBottomNavView.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
 

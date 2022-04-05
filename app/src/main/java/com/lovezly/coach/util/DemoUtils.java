@@ -1,15 +1,23 @@
 package com.lovezly.coach.util;
 
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
+
 import android.app.Activity;
 import android.content.Context;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.RelativeSizeSpan;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.StringUtils;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.example.module_common.util.GlideRoundTransform;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -60,6 +68,37 @@ public class DemoUtils {
             spannableString.setSpan(new RelativeSizeSpan(0.7f), value.indexOf("."), value.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
         return spannableString;
+    }
+
+    /**
+     * 身份证加密
+     *
+     * @param idCardNum
+     * @param front
+     * @param end
+     * @return
+     */
+    public static String idMask(String idCardNum, int front, int end) {
+        //身份证不能为空
+        if (StringUtils.isEmpty(idCardNum)) {
+            return null;
+        }
+        //需要截取的长度不能大于身份证号长度
+        if ((front + end) > idCardNum.length()) {
+            return null;
+        }
+        //需要截取的不能小于0
+        if (front < 0 || end < 0) {
+            return null;
+        }
+        //计算*的数量
+        int asteriskCount = idCardNum.length() - (front + end);
+        StringBuffer asteriskStr = new StringBuffer();
+        for (int i = 0; i < asteriskCount; i++) {
+            asteriskStr.append("*");
+        }
+        String regex = "(\\w{" + String.valueOf(front) + "})(\\w+)(\\w{" + String.valueOf(end) + "})";
+        return idCardNum.replaceAll(regex, "$1" + asteriskStr + "$3");
     }
 
     /**
@@ -174,14 +213,6 @@ public class DemoUtils {
         return path;
     }
 
-//    public static void bindImageViewC(Context context, Object path, int radius, ImageView imageView){
-//        Glide.with(context)
-//                .load(path)
-//                .transform(new CenterCrop(),new GlideRoundTransform(radius))
-//                .transition(withCrossFade())
-//                .into((ImageView) imageView);
-//    }
-
     public static String ToDouble(double d) {
         DecimalFormat df = new DecimalFormat();
         df.applyPattern("0.00");
@@ -244,5 +275,13 @@ public class DemoUtils {
         //如果上面的代码没有弹出软键盘 可以使用下面另一种方式
         InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.showSoftInput(editText, 0);
+    }
+
+    public static void bindImageViewC(Context context, Object path, int radius, ImageView imageView){
+        Glide.with(context)
+                .load(path)
+                .transform(new CenterCrop(),new GlideRoundTransform(radius))
+                .transition(withCrossFade())
+                .into((ImageView) imageView);
     }
 }

@@ -35,7 +35,7 @@
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="￥99.00"
+            android:text="￥0.00"
             android:textColor="#ffa12d"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -49,14 +49,15 @@
                 android:text="考试人数"
                 android:textColor="#333333"
                 android:textSize="15sp"/>
+
             <TextView
-                android:layout_marginRight="@dimen/dp15"
                 android:id="@+id/pop_people"
-                android:layout_alignParentRight="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="共3人"
-                android:textColor="#333333"/>
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp15"
+                android:text="共0人"
+                android:textColor="#333333" />
         </RelativeLayout>
         <View
             android:layout_marginTop="@dimen/dp15"
@@ -149,7 +150,7 @@
             android:layout_marginRight="@dimen/dp13"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp45"
-            android:text="确认支付  ￥690.00"
+            android:text="确认支付  ￥0.00"
             android:textColor="#ffffff"
             android:textSize="15sp" />
     </LinearLayout>

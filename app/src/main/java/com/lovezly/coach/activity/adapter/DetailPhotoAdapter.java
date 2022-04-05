@@ -8,7 +8,9 @@ import androidx.annotation.Nullable;
 import com.blankj.utilcode.util.ScreenUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
+import com.example.module_common.util.GlideUtile;
 import com.lovezly.coach.R;
+import com.lovezly.coach.util.DemoUtils;
 
 import java.util.List;
 
@@ -28,5 +30,7 @@ public class DetailPhotoAdapter extends BaseQuickAdapter<String, BaseViewHolder>
         params.width = width;
         params.height = height;
         imageView.setLayoutParams(params);
+
+        GlideUtile.bindImageView(getContext(), item, imageView);
     }
 }

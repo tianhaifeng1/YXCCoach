@@ -33,15 +33,15 @@ public class RegisterActivity extends OfficialMVPActivity<LoginView, LoginPresen
         });
 
         mBinding.registerSubmit.setOnClickListener(view -> {
-//            if (mBinding.registerEditPhone.getText().toString().trim().equals("")) {
-//                ToastUtils.showShort("请输入手机号");
-//            } else if (mBinding.registerEditYzm.getText().toString().trim().equals("")) {
-//                ToastUtils.showShort("请输入验证码");
-//            } else if (!RegexUtils.isMobileExact(mBinding.registerEditPhone.getText().toString().trim())) {
-//                ToastUtils.showShort("请输入正确的手机号");
-//            } else if (mBinding.registerEditName.getText().toString().trim().equals("")) {
-//                ToastUtils.showShort("请输入您的姓名");
-//            } else {
+            if (mBinding.registerEditPhone.getText().toString().trim().equals("")) {
+                ToastUtils.showShort("请输入手机号");
+            } else if (mBinding.registerEditYzm.getText().toString().trim().equals("")) {
+                ToastUtils.showShort("请输入验证码");
+            } else if (!RegexUtils.isMobileExact(mBinding.registerEditPhone.getText().toString().trim())) {
+                ToastUtils.showShort("请输入正确的手机号");
+            } else if (mBinding.registerEditName.getText().toString().trim().equals("")) {
+                ToastUtils.showShort("请输入您的姓名");
+            } else {
                 new RegisterDialog(context) {
                     @Override
                     public void onOkClick() {
@@ -49,7 +49,7 @@ public class RegisterActivity extends OfficialMVPActivity<LoginView, LoginPresen
                         finish();
                     }
                 }.show();
-//            }
+            }
         });
         mBinding.idCardJust.setOnClickListener(view -> {
             ToastUtils.showShort("正面");

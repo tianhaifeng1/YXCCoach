@@ -17,7 +17,9 @@
             android:layout_height="@dimen/dp40"
             android:layout_marginLeft="@dimen/dp15"
             android:layout_marginRight="@dimen/dp15"
-            android:background="@drawable/gray_20">
+            android:background="@drawable/gray_20"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
 
             <ImageView
                 android:layout_width="@dimen/dp40"
@@ -27,34 +29,34 @@
                 android:src="@drawable/fdj" />
 
             <EditText
-                android:id="@+id/two_search"
+                android:id="@+id/three_search"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/dp10"
                 android:background="@color/transparent"
                 android:gravity="center_vertical"
                 android:hint="请输入学员姓名/考场名称进行搜索"
-                android:inputType="text"
-                android:maxLines="1"
+                android:maxLength="15"
+                android:singleLine="true"
                 android:textSize="13sp" />
         </LinearLayout>
     </LinearLayout>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#FFFFFF"
         app:tabIndicatorColor="#ffa12d"
         app:tabIndicatorFullWidth="false"
         app:tabRippleColor="@color/transparent"
-        android:background="#FFFFFF"
         app:tabSelectedTextColor="#ffa12d"
-        app:tabTextColor="#444444"
-        android:layout_width="match_parent"
-        android:layout_height="44dp" />
+        app:tabTextColor="#444444" />
 
-<!--    <com.scwang.smart.refresh.layout.SmartRefreshLayout-->
-<!--        android:id="@+id/smart_refresh"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent">-->
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/smart_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
@@ -62,6 +64,6 @@
             android:layout_height="match_parent"
             android:background="@color/color_whitesmoke" />
 
-<!--    </com.scwang.smart.refresh.layout.SmartRefreshLayout>-->
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
 
 </LinearLayout>

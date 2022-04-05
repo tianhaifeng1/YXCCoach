@@ -29,7 +29,7 @@ public class ResponseParser<T> extends AbstractParser<T> {
         T t = null;
 
 
-        if (data.getCode() == 200 || data.getCode() == 201) {  //假设200代表正常情况
+        if (data.getCode() == 200 || data.getCode() == 1) {  //假设200代表正常情况
             //第二步，取出data字段，转换成我们想要的对象
             if(mType == String.class){
                 t = (T) data.getData();
@@ -43,7 +43,7 @@ public class ResponseParser<T> extends AbstractParser<T> {
             t = (T) "";
         }
 
-        if (data.getCode() != 200 && data.getCode() != 201) {//这里假设code不等于200，代表数据不正确，抛出异常
+        if (data.getCode() != 200 && data.getCode() != 1) {//这里假设code不等于200，代表数据不正确，抛出异常
             throw new ParseException(String.valueOf(data.getCode()), data.getMsg(), response);
         }
         return t;

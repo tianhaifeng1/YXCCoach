@@ -12,6 +12,6 @@ public class OrderAllFragment extends OrderInitFragment<OrderAdapter> {
 
     @Override
     protected OrderAdapter initAdapter() {
-        return new OrderAdapter(DemoUtils.getList());
+        return new OrderAdapter(null);
     }
 }

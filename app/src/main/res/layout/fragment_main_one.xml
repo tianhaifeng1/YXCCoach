@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_whitesmoke"
@@ -17,36 +18,37 @@
             android:textStyle="bold"
             android:textColor="#333333"
             android:textSize="17sp"/>
+
         <TextView
             android:id="@+id/one_name"
-            android:gravity="right"
-            android:maxLines="1"
-            android:ellipsize="end"
-            android:layout_marginRight="@dimen/dp13"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:maxWidth="@dimen/dp70"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="hi !name"
-            android:textColor="#ffa12d"
-            android:textSize="13sp"/>
-        <ImageView
-            android:src="@drawable/logo"
-            android:layout_marginRight="@dimen/dp5"
-            android:layout_toLeftOf="@+id/one_name"
+            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp13"
+            android:ellipsize="end"
+            android:gravity="right"
+            android:maxWidth="@dimen/dp70"
+            android:maxLines="1"
+            android:textColor="#ffa12d"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/one_head"
             android:layout_width="@dimen/dp25"
-            android:layout_height="@dimen/dp25"/>
+            android:layout_height="@dimen/dp25"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp5"
+            android:layout_toLeftOf="@+id/one_name" />
     </RelativeLayout>
 
     <LinearLayout
+        android:layout_marginBottom="@dimen/dp10"
         android:gravity="center_vertical"
         android:layout_marginTop="@dimen/dp10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:layout_weight="1"
             android:layout_marginLeft="@dimen/dp15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -55,9 +57,13 @@
             android:textSize="15sp"/>
 
         <LinearLayout
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:layout_marginRight="@dimen/dp10"
             android:background="@drawable/white_10"
-            android:layout_width="@dimen/dp130"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/dp20">
             <ImageView
                 android:layout_marginLeft="@dimen/dp5"
@@ -74,21 +80,23 @@
                 android:background="@color/transparent"
                 android:gravity="center_vertical"
                 android:hint="请输入关键词搜索"
-                android:inputType="text"
                 android:textSize="11sp"
-                android:maxLines="1" />
+                android:maxLength="15"
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/one_cc_lin"
             android:layout_marginRight="@dimen/dp15"
             android:background="@drawable/orange_wk_15"
             android:gravity="center_vertical"
-            android:layout_width="@dimen/dp100"
+            android:layout_width="85dp"
             android:layout_height="@dimen/dp20">
             <TextView
+                android:id="@+id/one_cc"
                 android:gravity="right"
                 android:layout_marginLeft="@dimen/dp5"
-                android:layout_width="@dimen/dp75"
+                android:layout_width="@dimen/dp60"
                 android:layout_height="wrap_content"
                 android:text="训练场次"
                 android:textColor="#ffa12d"
@@ -100,11 +108,23 @@
                 android:layout_height="6dp"/>
         </LinearLayout>
     </LinearLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="@dimen/dp10"
-        android:layout_marginLeft="@dimen/dp13"
-        android:layout_marginRight="@dimen/dp13"
-        android:id="@+id/one_rv"
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
+
+        <com.scwang.smart.refresh.header.ClassicsHeader
+            android:background="@color/color_whitesmoke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/one_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp13"
+            android:layout_marginRight="@dimen/dp13" />
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
 </LinearLayout>

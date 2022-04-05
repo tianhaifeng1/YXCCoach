@@ -9,6 +9,7 @@
     <ImageView
         android:src="@drawable/logo"
         android:id="@+id/item_detail_img"
+        android:scaleType="centerCrop"
         android:layout_width="@dimen/dp75"
         android:layout_height="@dimen/dp75"/>
 

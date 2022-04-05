@@ -11,6 +11,8 @@
     <include layout="@layout/ttitle" />
 
     <LinearLayout
+        android:id="@+id/order_detail_lin1"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp90"
         android:background="#ffa12d"
@@ -49,6 +51,118 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/order_detail_lin2"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp90"
+        android:background="#ffa12d"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="@dimen/dp20"
+                android:layout_height="@dimen/dp20"
+                android:layout_marginLeft="@dimen/dp13"
+                android:src="@drawable/paid" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp10"
+                android:text="已取消"
+                android:textColor="#ffffff"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp13"
+            android:layout_marginTop="@dimen/dp5"
+            android:text="您的订单已取消"
+            android:textColor="#ffffff"
+            android:textSize="13sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/order_detail_lin0"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp120"
+        android:background="#ffa12d"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="@dimen/dp20"
+                android:layout_height="@dimen/dp20"
+                android:layout_marginLeft="@dimen/dp13"
+                android:src="@drawable/dfk" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp10"
+                android:text="待付款"
+                android:textColor="#ffffff"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp13"
+            android:layout_marginTop="@dimen/dp5"
+            android:text="请您及时支付订单，以防错过考试"
+            android:textColor="#ffffff"
+            android:textSize="13sp"/>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/dp12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/order_detail_quxiao"
+                android:background="@drawable/orange_wk_15_detail"
+                android:layout_marginLeft="@dimen/dp13"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp30"
+                android:text="取消订单"
+                android:textColor="#ffffff"
+                android:textSize="13sp"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/order_detail_zhifu"
+                android:background="@drawable/white_15"
+                android:layout_marginLeft="@dimen/dp12"
+                android:layout_marginRight="@dimen/dp13"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp30"
+                android:text="立即支付"
+                android:textColor="#ffa12d"
+                android:textSize="13sp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -75,9 +189,9 @@
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/order_detail_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="西安市社会化三隆科目二考场"
                     android:textColor="#444444" />
             </LinearLayout>
 
@@ -94,9 +208,9 @@
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/order_detail_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2022-03-12 08:00"
                     android:textColor="#444444" />
             </LinearLayout>
 
@@ -113,9 +227,9 @@
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/order_detail_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="202203140021"
                     android:textColor="#444444" />
             </LinearLayout>
 
@@ -131,23 +245,10 @@
                     android:textColor="#999999"
                     android:textSize="14sp" />
 
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="刘佳佳  18392000100"
-                        android:textColor="#444444"/>
-                    <TextView
-                        android:layout_marginTop="@dimen/dp7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="身份证  61012019902206"
-                        android:textColor="#999999"
-                        android:textSize="11sp"/>
-                </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/order_detail_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -162,9 +263,9 @@
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/order_detail_paytime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2022-03-12 14:00"
                     android:textColor="#444444" />
             </LinearLayout>
 
@@ -181,9 +282,9 @@
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/order_detail_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="￥620.00"
                     android:textColor="#ffa12d"/>
             </LinearLayout>
         </LinearLayout>

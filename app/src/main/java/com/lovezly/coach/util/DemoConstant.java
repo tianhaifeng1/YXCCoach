@@ -16,6 +16,8 @@ public class DemoConstant {
     public static String nickname = "";
     //用户手机号
     public static String mobile = "";
+    //认证状态
+    public static String status = "";
 
     public static String path = "";
 
@@ -30,11 +32,13 @@ public class DemoConstant {
 
     public static final String user_mobile = "user_mobile";
 
+    public static final String last_login_time = "last_login_time";
+
     public static final String prod_info_list = "prod_info_list";
 
     public static final String dictionary_info_list = "dictionary_info_list";
 
     public static final String photos_group = "photos_group";
 
-    public static final String login_bean = "login_bean";
+    public static final String date_bean = "date_bean";
 }

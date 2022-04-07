@@ -4,119 +4,185 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/color_whitesmoke"
+    android:orientation="vertical"
     tools:context=".activity.personal.UserInfoActivity">
 
     <include layout="@layout/ttitle" />
 
     <LinearLayout
-        android:gravity="center_vertical"
-        android:background="@color/color_white"
+        android:id="@+id/user_info_head_lin"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp60">
+        android:layout_height="@dimen/dp60"
+        android:background="@color/color_white"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical">
+
         <TextView
-            android:layout_weight="1"
-            android:layout_marginLeft="@dimen/dp13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp13"
+            android:layout_weight="1"
             android:text="头像"
             android:textColor="#999999"
-            android:textSize="15sp"/>
+            android:textSize="15sp" />
+
         <ImageView
-            android:src="@drawable/logo"
+            android:id="@+id/user_info_head"
             android:layout_width="@dimen/dp50"
-            android:layout_height="@dimen/dp50"/>
+            android:layout_height="@dimen/dp50"
+            android:src="@drawable/logo" />
+
         <ImageView
-            android:layout_marginRight="@dimen/dp14"
-            android:layout_marginLeft="@dimen/dp14"
-            android:src="@drawable/riht"
             android:layout_width="10dp"
-            android:layout_height="@dimen/dp12"/>
+            android:layout_height="@dimen/dp12"
+            android:layout_marginLeft="@dimen/dp14"
+            android:layout_marginRight="@dimen/dp14"
+            android:src="@drawable/riht" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="0.5dp"
-        android:gravity="center_vertical"
-        android:background="@color/color_white"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp60">
+        android:layout_height="@dimen/dp60"
+        android:layout_marginTop="0.5dp"
+        android:background="@color/color_white"
+        android:gravity="center_vertical">
+
         <TextView
-            android:layout_weight="1"
-            android:layout_marginLeft="@dimen/dp13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="姓名"
+            android:layout_marginLeft="@dimen/dp13"
+            android:text="姓名        "
             android:textColor="#999999"
-            android:textSize="15sp"/>
-        <TextView
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/user_info_name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="王向前"
-            android:textColor="#333333"
-            android:textSize="15sp"/>
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:gravity="right|center_vertical"
+            android:hint="请输入姓名"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:textSize="@dimen/sp14" />
+
         <ImageView
-            android:layout_marginRight="@dimen/dp14"
-            android:layout_marginLeft="@dimen/dp14"
-            android:src="@drawable/riht"
             android:layout_width="10dp"
-            android:layout_height="@dimen/dp12"/>
+            android:layout_height="@dimen/dp12"
+            android:layout_marginLeft="@dimen/dp14"
+            android:layout_marginRight="@dimen/dp14"
+            android:src="@drawable/riht" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="0.5dp"
-        android:gravity="center_vertical"
-        android:background="@color/color_white"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp60">
+        android:layout_height="@dimen/dp60"
+        android:layout_marginTop="0.5dp"
+        android:background="@color/color_white"
+        android:gravity="center_vertical">
+
         <TextView
-            android:layout_weight="1"
-            android:layout_marginLeft="@dimen/dp13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="电话"
+            android:layout_marginLeft="@dimen/dp13"
+            android:text="电话        "
             android:textColor="#999999"
-            android:textSize="15sp"/>
+            android:textSize="15sp" />
+
         <TextView
+            android:gravity="right|center_vertical"
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_weight="1"
+            android:id="@+id/user_info_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="18320001500"
             android:textColor="#333333"
-            android:textSize="15sp"/>
+            android:textSize="15sp" />
+
         <ImageView
-            android:layout_marginRight="@dimen/dp14"
-            android:layout_marginLeft="@dimen/dp14"
-            android:src="@drawable/riht"
             android:layout_width="10dp"
-            android:layout_height="@dimen/dp12"/>
+            android:layout_height="@dimen/dp12"
+            android:layout_marginLeft="@dimen/dp14"
+            android:layout_marginRight="@dimen/dp14"
+            android:src="@drawable/riht" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="0.5dp"
-        android:gravity="center_vertical"
-        android:background="@color/color_white"
+        android:visibility="gone"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp60">
+        android:layout_height="@dimen/dp60"
+        android:layout_marginTop="0.5dp"
+        android:background="@color/color_white"
+        android:gravity="center_vertical">
+
         <TextView
-            android:layout_weight="1"
-            android:layout_marginLeft="@dimen/dp13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp13"
+            android:text="验证码    "
+            android:textColor="#999999"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/user_info_yzm"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:digits="0123456789"
+            android:hint="请输入验证码"
+            android:maxLength="6"
+            android:maxLines="1"
+            android:textSize="@dimen/sp14" />
+
+        <TextView
+            android:id="@+id/login_yzm"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp10"
+            android:paddingRight="@dimen/dp15"
+            android:text="获取验证码"
+            android:textColor="#ffa12d" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginTop="0.5dp"
+        android:background="@color/color_white"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp13"
             android:text="认证状态"
             android:textColor="#999999"
-            android:textSize="15sp"/>
+            android:textSize="15sp" />
+
         <TextView
+            android:gravity="right|center_vertical"
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_weight="1"
+            android:id="@+id/user_info_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="待认证"
+            android:text="已认证"
             android:textColor="#333333"
-            android:textSize="15sp"/>
+            android:textSize="15sp" />
+
         <ImageView
-            android:layout_marginRight="@dimen/dp14"
-            android:layout_marginLeft="@dimen/dp14"
-            android:src="@drawable/riht"
             android:layout_width="10dp"
-            android:layout_height="@dimen/dp12"/>
+            android:layout_height="@dimen/dp12"
+            android:layout_marginLeft="@dimen/dp14"
+            android:layout_marginRight="@dimen/dp14"
+            android:src="@drawable/riht" />
     </LinearLayout>
 
 </LinearLayout>

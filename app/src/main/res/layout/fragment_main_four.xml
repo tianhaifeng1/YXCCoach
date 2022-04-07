@@ -15,8 +15,7 @@
             android:layout_width="@dimen/dp60"
             android:layout_height="@dimen/dp60"
             android:layout_marginLeft="@dimen/dp14"
-            android:layout_marginTop="62dp"
-            android:src="@drawable/logo" />
+            android:layout_marginTop="62dp"/>
         <LinearLayout
             android:id="@+id/four_name_rel"
             android:gravity="center"
@@ -26,9 +25,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <TextView
+                android:id="@+id/four_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="王向前"
                 android:textStyle="bold"
                 android:textColor="#ffffff"
                 android:textSize="15sp"/>
@@ -38,18 +37,20 @@
                 android:layout_width="@dimen/dp1"
                 android:layout_height="@dimen/dp15"/>
             <ImageView
+                android:id="@+id/four_status"
                 android:layout_marginLeft="@dimen/dp10"
                 android:src="@drawable/four_authentication"
                 android:layout_width="@dimen/dp39"
                 android:layout_height="@dimen/dp13"/>
         </LinearLayout>
+
         <TextView
-            android:layout_marginTop="@dimen/dp12"
-            android:layout_below="@+id/four_name_rel"
-            android:layout_marginLeft="@dimen/dp15"
-            android:layout_toRightOf="@+id/four_head"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/four_name_rel"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp12"
+            android:layout_toRightOf="@+id/four_head"
             android:text="易学车合作教练"
             android:textColor="#ffffff"
             android:textSize="12sp" />
@@ -71,9 +72,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent">
             <TextView
+                android:id="@+id/four_today"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3"
+                android:text="0"
                 android:textStyle="bold"
                 android:textColor="#ffa12d"
                 android:textSize="15sp"/>
@@ -95,9 +97,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent">
             <TextView
+                android:id="@+id/four_month"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="20"
+                android:text="0"
                 android:textStyle="bold"
                 android:textColor="#ffa12d"
                 android:textSize="15sp"/>
@@ -119,9 +122,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent">
             <TextView
+                android:id="@+id/four_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="115"
+                android:text="0"
                 android:textStyle="bold"
                 android:textColor="#ffa12d"
                 android:textSize="15sp"/>

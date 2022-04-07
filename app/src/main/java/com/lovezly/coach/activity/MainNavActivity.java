@@ -19,12 +19,6 @@ public class MainNavActivity extends NavBottomActivity {
         fragmentList.add(new MainTwoFragment());
         fragmentList.add(new MainThreeFragment());
         fragmentList.add(new MainFourFragment());
-
-        DemoConstant.token = (String) SharedPreferencesUtils.getParam(context, DemoConstant.user_token, "");
-        DemoConstant.userId = (int) SharedPreferencesUtils.getParam(context, DemoConstant.user_id, 0);
-        DemoConstant.avatar = (String) SharedPreferencesUtils.getParam(context, DemoConstant.user_avatar, "");
-        DemoConstant.nickname = (String) SharedPreferencesUtils.getParam(context, DemoConstant.user_nickname, "");
-        DemoConstant.mobile = (String) SharedPreferencesUtils.getParam(context, DemoConstant.user_mobile, "");
     }
 
     @Override

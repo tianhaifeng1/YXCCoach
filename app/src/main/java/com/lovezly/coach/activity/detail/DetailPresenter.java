@@ -11,6 +11,9 @@ import com.lovezly.coach.bean.ExamDetailBean;
 import com.lovezly.coach.bean.OrderDetailBean;
 import com.lovezly.coach.bean.PayBean;
 import com.lovezly.coach.bean.PayResultBean;
+import com.lovezly.coach.bean.UploadBean;
+
+import java.io.File;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import rxhttp.RxHttp;
@@ -103,6 +106,49 @@ public class DetailPresenter extends OfficialPresenter<DetailView> {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(bean -> {
                     getView().getOrderDetailSuccess(bean);
+                }, (OnError) error -> {
+                    ToastUtils.showShort(error.getErrorMsg());
+                });
+    }
+
+    /*** 订单取消 */
+    @SuppressLint("CheckResult")
+    public void getOrderCancel(String id) {
+        RxHttp.postForm("api/exam/cancel")       //发送表单形式的post请求
+                .add("id", id)
+                .asResponse(String.class)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(s -> {
+                    getView().getOrderCancelSuccess();
+                }, (OnError) error -> {
+                    ToastUtils.showShort(error.getErrorMsg());
+                });
+    }
+
+    /*** 上传图片 */
+    @SuppressLint("CheckResult")
+    public void getUpload(File file) {
+        RxHttp.postForm("api/Common/upload")       //发送表单形式的post请求
+                .addFile("file", file)
+                .asResponse(UploadBean.class)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(bean -> {
+                    getView().getUploadlSuccess(bean);
+                }, (OnError) error -> {
+                    ToastUtils.showShort(error.getErrorMsg());
+                });
+    }
+
+    /*** 修改个人信息 */
+    @SuppressLint("CheckResult")
+    public void getProfile(String nickname, String avatar) {
+        RxHttp.postForm("api/user/profile")       //发送表单形式的post请求
+                .add("nickname", nickname)
+                .add("avatar", avatar)
+                .asResponse(String.class)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(s -> {
+                    getView().getProfileSuccess();
                 }, (OnError) error -> {
                     ToastUtils.showShort(error.getErrorMsg());
                 });

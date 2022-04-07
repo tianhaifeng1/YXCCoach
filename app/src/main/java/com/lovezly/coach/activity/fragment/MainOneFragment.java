@@ -215,6 +215,7 @@ public class MainOneFragment extends OfficialMVPFragment<FragmentView, FragmentP
             public void onTimeSelect(Date date, View v) {
                 SimpleDateFormat format = new SimpleDateFormat("yyyy-M-dd");
                 bookDate = format.format(date);
+                index = 1;
                 initData();
                 mBinding.oneCc.setText(format.format(date));
             }

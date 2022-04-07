@@ -18,10 +18,13 @@ import com.example.module_common.util.SharedPreferencesUtils;
 import com.hjq.permissions.OnPermission;
 import com.hjq.permissions.XXPermissions;
 import com.lovezly.coach.R;
+import com.lovezly.coach.bean.DateBean;
 import com.lovezly.coach.bean.UserBean;
 import com.lovezly.coach.databinding.ActivityLoginBinding;
 import com.lovezly.coach.util.DemoConstant;
+import com.lovezly.coach.util.SPUtils;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -67,7 +70,7 @@ public class LoginActivity extends OfficialMVPActivity<LoginView, LoginPresenter
             }else if (!RegexUtils.isMobileExact(mBinding.loginEditPhone.getText().toString().trim())) {
                 ToastUtils.showShort("请输入正确的手机号");
             } else {
-                getPresenter().getRegCode(mBinding.loginEditPhone.getText().toString().trim());
+                getPresenter().getRegCode(mBinding.loginEditPhone.getText().toString().trim(),"mobilelogin");
             }
         });
         mBinding.loginSubmit.setOnClickListener(view -> {
@@ -195,6 +198,10 @@ public class LoginActivity extends OfficialMVPActivity<LoginView, LoginPresenter
         SharedPreferencesUtils.setParam(context, DemoConstant.user_avatar, bean.getUserinfo().getAvatar());
         SharedPreferencesUtils.setParam(context, DemoConstant.user_nickname, bean.getUserinfo().getNickname());
         SharedPreferencesUtils.setParam(context, DemoConstant.user_mobile, bean.getUserinfo().getMobile());
+
+        DateBean dateBean = new DateBean();
+        dateBean.setLastLoginTime();
+        SPUtils.setDateBean(context, dateBean);
 
         skipActivity(MainNavActivity.class);
     }

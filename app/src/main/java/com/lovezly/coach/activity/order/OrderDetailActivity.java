@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.example.module_common.official.OfficialMVPActivity;
 import com.lovezly.coach.R;
 import com.lovezly.coach.activity.adapter.OrderDetailAdapter;
@@ -49,7 +50,7 @@ public class OrderDetailActivity extends OfficialMVPActivity<DetailView, DetailP
         titleModule.setBackImage(com.example.module_common.R.mipmap.ic_back_white);
 
         mBinding.orderDetailQuxiao.setOnClickListener(view -> {
-
+            getPresenter().getOrderCancel(id);
         });
 
         mBinding.orderDetailZhifu.setOnClickListener(view -> {
@@ -100,6 +101,12 @@ public class OrderDetailActivity extends OfficialMVPActivity<DetailView, DetailP
             mBinding.orderDetailPrice.setText(DemoUtils.changTVsize("￥"+DemoUtils.ToDouble(bean.getPrice())));
             orderDetailAdapter.setNewData(bean.getStudent());
         }
+    }
+
+    @Override
+    public void getOrderCancelSuccess() {
+        ToastUtils.showShort("取消成功");
+        finish();
     }
 
     private CommonPopupWindow popupWindow;

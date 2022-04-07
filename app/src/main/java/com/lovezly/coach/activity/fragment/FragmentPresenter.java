@@ -4,13 +4,12 @@ import android.annotation.SuppressLint;
 
 import androidx.annotation.NonNull;
 
-import com.blankj.utilcode.util.EncryptUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.example.module_common.official.OfficialPresenter;
 import com.example.module_common.rxhttp.OnError;
 import com.lovezly.coach.bean.ExamIndexBean;
 import com.lovezly.coach.bean.OrderListBean;
-import com.lovezly.coach.bean.UserBean;
+import com.lovezly.coach.bean.UserInfoBean;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import rxhttp.RxHttp;
@@ -49,6 +48,19 @@ public class FragmentPresenter extends OfficialPresenter<FragmentView> {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(bean -> {
                     getView().getOrderListSuccess(bean);
+                }, (OnError) error -> {
+                    ToastUtils.showShort(error.getErrorMsg());
+                });
+    }
+
+    /*** 个人信息 */
+    @SuppressLint("CheckResult")
+    public void getOrdersAnalysis() {
+        RxHttp.postForm("api/user/index")       //发送表单形式的post请求
+                .asResponse(UserInfoBean.class)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(bean -> {
+                    getView().getOrdersAnalysisSuccess(bean);
                 }, (OnError) error -> {
                     ToastUtils.showShort(error.getErrorMsg());
                 });

@@ -9,16 +9,32 @@ android {
         applicationId "com.lovezly.coach"
         minSdk 21
         targetSdk 31
-        versionCode 101
-        versionName "1.0.1"
+        versionCode 106
+        versionName "1.0.6"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        sbGoogle {
+            storeFile file('D:\\kaitian\\YXCCoach\\yxccoach.jks')
+            storePassword 'android'
+            keyAlias = '易学车教练'
+            keyPassword 'android'
+        }
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.sbGoogle
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.sbGoogle
         }
     }
     compileOptions {
@@ -47,4 +63,12 @@ dependencies {
 
     implementation 'com.yanzhenjie:album:2.1.3'
     implementation 'top.zibin:Luban:1.1.8'
+
+    //微信
+    api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+
+    api 'com.alipay.sdk:alipaysdk-android:+@aar'
+
+    implementation 'com.tencent.bugly:crashreport_upgrade:latest.release'//其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.0
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.2.0
 }

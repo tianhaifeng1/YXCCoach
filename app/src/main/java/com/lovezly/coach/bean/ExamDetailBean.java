@@ -157,8 +157,8 @@ public class ExamDetailBean  implements Serializable {
         private String image;
         private String book_date;
         private String address;
-        private Integer price;
-        private Integer agent_price;
+        private double price;
+        private double agent_price;
 
         public Integer getId() {
             return id;
@@ -200,19 +200,19 @@ public class ExamDetailBean  implements Serializable {
             this.address = address;
         }
 
-        public Integer getPrice() {
+        public double getPrice() {
             return price;
         }
 
-        public void setPrice(Integer price) {
+        public void setPrice(double price) {
             this.price = price;
         }
 
-        public Integer getAgent_price() {
+        public double getAgent_price() {
             return agent_price;
         }
 
-        public void setAgent_price(Integer agent_price) {
+        public void setAgent_price(double agent_price) {
             this.agent_price = agent_price;
         }
     }

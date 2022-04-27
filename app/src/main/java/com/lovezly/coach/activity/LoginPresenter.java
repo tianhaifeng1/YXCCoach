@@ -10,6 +10,7 @@ import com.example.module_common.official.OfficialPresenter;
 import com.example.module_common.rxhttp.OnError;
 import com.lovezly.coach.bean.UploadBean;
 import com.lovezly.coach.bean.UserBean;
+import com.lovezly.coach.bean.YhxyBean;
 
 import java.io.File;
 
@@ -94,4 +95,32 @@ public class LoginPresenter extends OfficialPresenter<LoginView> {
                 });
     }
 
+    /*** 用户协议 */
+    @SuppressLint("CheckResult")
+    public void getPolicy() {
+        RxHttp.postForm("api/index/policy")       //发送表单形式的post请求
+                .asResponse(YhxyBean.class)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(bean -> {
+                    hideDialog();
+                    getView().getPolicySuccess(bean);
+                }, (OnError) error -> {
+                    hideDialog();
+                    ToastUtils.showShort(error.getErrorMsg());
+                });
+    }
+    /*** 关于 */
+    @SuppressLint("CheckResult")
+    public void getAbooutUs() {
+        RxHttp.postForm("api/index/abooutUs")       //发送表单形式的post请求
+                .asResponse(YhxyBean.class)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(bean -> {
+                    hideDialog();
+                    getView().getPolicySuccess(bean);
+                }, (OnError) error -> {
+                    hideDialog();
+                    ToastUtils.showShort(error.getErrorMsg());
+                });
+    }
 }

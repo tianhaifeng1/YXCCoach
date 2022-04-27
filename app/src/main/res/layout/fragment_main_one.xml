@@ -7,17 +7,18 @@
     android:orientation="vertical">
 
     <RelativeLayout
-        android:layout_marginTop="@dimen/dp25"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp50">
+        android:layout_height="@dimen/dp50"
+        android:layout_marginTop="@dimen/dp25">
+
         <TextView
-            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:text="易学车考场系统"
-            android:textStyle="bold"
             android:textColor="#333333"
-            android:textSize="17sp"/>
+            android:textSize="17sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/one_name"
@@ -43,69 +44,74 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_marginBottom="@dimen/dp10"
-        android:gravity="center_vertical"
-        android:layout_marginTop="@dimen/dp10"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_marginBottom="@dimen/dp10"
+        android:gravity="center_vertical">
+
         <TextView
-            android:layout_marginLeft="@dimen/dp15"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp15"
             android:text="考场推荐"
             android:textColor="#333333"
-            android:textSize="15sp"/>
+            android:textSize="15sp" />
 
         <LinearLayout
-            android:layout_marginLeft="@dimen/dp20"
-            android:layout_weight="1"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:layout_marginRight="@dimen/dp10"
-            android:background="@drawable/white_10"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/dp20">
+            android:layout_height="@dimen/dp30"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp10"
+            android:layout_weight="1"
+            android:background="@drawable/white_15"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
             <ImageView
-                android:layout_marginLeft="@dimen/dp5"
                 android:layout_width="@dimen/dp20"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp5"
                 android:padding="@dimen/dp5"
                 android:src="@drawable/fdj" />
 
             <EditText
-                android:layout_marginRight="@dimen/dp8"
                 android:id="@+id/one_search"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/dp8"
                 android:background="@color/transparent"
                 android:gravity="center_vertical"
                 android:hint="请输入关键词搜索"
-                android:textSize="11sp"
                 android:maxLength="15"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:textSize="11sp" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/one_cc_lin"
+            android:layout_width="95dp"
+            android:layout_height="@dimen/dp30"
             android:layout_marginRight="@dimen/dp15"
-            android:background="@drawable/orange_wk_15"
-            android:gravity="center_vertical"
-            android:layout_width="85dp"
-            android:layout_height="@dimen/dp20">
+            android:background="@drawable/orange_wk_20"
+            android:gravity="center_vertical">
+
             <TextView
                 android:id="@+id/one_cc"
-                android:gravity="right"
-                android:layout_marginLeft="@dimen/dp5"
-                android:layout_width="@dimen/dp60"
+                android:layout_width="@dimen/dp70"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp5"
+                android:gravity="right"
                 android:text="训练场次"
                 android:textColor="#ffa12d"
-                android:textSize="12sp"/>
+                android:textSize="12sp" />
+
             <ImageView
-                android:layout_marginLeft="@dimen/dp5"
-                android:src="@drawable/main_xia"
                 android:layout_width="10dp"
-                android:layout_height="6dp"/>
+                android:layout_height="6dp"
+                android:layout_marginLeft="@dimen/dp5"
+                android:src="@drawable/main_xia" />
         </LinearLayout>
     </LinearLayout>
 
@@ -115,16 +121,55 @@
         android:layout_height="match_parent">
 
         <com.scwang.smart.refresh.header.ClassicsHeader
-            android:background="@color/color_whitesmoke"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@color/color_whitesmoke" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/one_rv"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/dp13"
-            android:layout_marginRight="@dimen/dp13" />
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="考试时间"
+                    android:textColor="@color/color_name"
+                    android:textSize="@dimen/sp12" />
+
+                <TextView
+                    android:paddingLeft="@dimen/dp10"
+                    android:paddingRight="@dimen/dp10"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:text="考试场地"
+                    android:textColor="@color/color_name"
+                    android:textSize="@dimen/sp12" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="考试科目"
+                    android:textColor="@color/color_name"
+                    android:textSize="@dimen/sp12" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/one_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
     </com.scwang.smart.refresh.layout.SmartRefreshLayout>
 
 </LinearLayout>

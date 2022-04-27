@@ -17,8 +17,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
 import com.bigkoo.pickerview.builder.TimePickerBuilder;
+import com.bigkoo.pickerview.listener.OnOptionsSelectListener;
 import com.bigkoo.pickerview.listener.OnTimeSelectListener;
+import com.bigkoo.pickerview.view.OptionsPickerView;
 import com.bigkoo.pickerview.view.TimePickerView;
 import com.blankj.utilcode.util.ToastUtils;
 import com.bumptech.glide.Glide;
@@ -29,6 +32,7 @@ import com.lovezly.coach.R;
 import com.lovezly.coach.activity.adapter.MainAdapter;
 import com.lovezly.coach.activity.detail.ExaminationDetailActivity;
 import com.lovezly.coach.bean.ExamIndexBean;
+import com.lovezly.coach.bean.SelectDateBean;
 import com.lovezly.coach.databinding.FragmentMainOneBinding;
 import com.lovezly.coach.util.DemoConstant;
 import com.lovezly.coach.util.DemoUtils;
@@ -143,6 +147,8 @@ public class MainOneFragment extends OfficialMVPFragment<FragmentView, FragmentP
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 index = 1;
+                mBinding.oneCc.setText("训练场次");
+                bookDate = "";
                 initData();
             }
 
@@ -154,7 +160,8 @@ public class MainOneFragment extends OfficialMVPFragment<FragmentView, FragmentP
         });
 
         mBinding.oneCcLin.setOnClickListener(view1 -> {
-            onYearMonthDayTimePicker();
+//            onYearMonthDayTimePicker();
+            onSelectDate();
         });
 
         initAdapter();
@@ -181,6 +188,14 @@ public class MainOneFragment extends OfficialMVPFragment<FragmentView, FragmentP
     public void initData() {
         super.initData();
         getPresenter().getExamIndex(bookDate, mBinding.oneSearch.getText().toString().trim(), index, 1);
+        getPresenter().selectdata();
+    }
+
+    private List<SelectDateBean> selectDateBeans = new ArrayList<>();
+
+    @Override
+    public void getSelectDateSuccess(List<SelectDateBean> bean) {
+        selectDateBeans = bean;
     }
 
     @Override
@@ -200,6 +215,32 @@ public class MainOneFragment extends OfficialMVPFragment<FragmentView, FragmentP
 
     private String bookDate = "";
 
+    public void onSelectDate() {
+        if (selectDateBeans != null && selectDateBeans.size() > 0) {
+            List<String> option1 = new ArrayList<>();
+            for (SelectDateBean date : selectDateBeans) {
+                option1.add(date.getBook_date());
+            }
+            OptionsPickerView pvOptions = new OptionsPickerBuilder(activity, new OnOptionsSelectListener() {
+                @Override
+                public void onOptionsSelect(int options1, int option2, int options3, View v) {
+                    bookDate = option1.get(options1);
+                    index = 1;
+                    initData();
+                    mBinding.oneCc.setText(bookDate);
+                }
+            }).setTitleText("请选择")
+                    .setContentTextSize(16)//滚轮文字大小
+                    .setLineSpacingMultiplier((float) 2.0)
+                    .setOutSideCancelable(false)
+                    .build();
+            pvOptions.setPicker(option1);
+            pvOptions.show();
+        } else {
+            ToastUtils.showShort("暂无场次");
+        }
+    }
+
     public void onYearMonthDayTimePicker() {
         Calendar startDate = Calendar.getInstance();
         //startDate.set(2013,1,1);
@@ -213,7 +254,7 @@ public class MainOneFragment extends OfficialMVPFragment<FragmentView, FragmentP
         TimePickerView pvTime = new TimePickerBuilder(activity, new OnTimeSelectListener() {
             @Override
             public void onTimeSelect(Date date, View v) {
-                SimpleDateFormat format = new SimpleDateFormat("yyyy-M-dd");
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
                 bookDate = format.format(date);
                 index = 1;
                 initData();

@@ -21,6 +21,8 @@ public class DemoConstant {
 
     public static String path = "";
 
+    public static String order = "";
+
     //============================================share对象：用户的常量key========================================
     public static final String user_token = "user_token";
 
@@ -41,4 +43,7 @@ public class DemoConstant {
     public static final String photos_group = "photos_group";
 
     public static final String date_bean = "date_bean";
+
+    //============================================ 微信参数 ========================================
+    public static String wx_app_id = "wxbbb3867d248807f2";
 }

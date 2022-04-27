@@ -43,4 +43,12 @@ public interface DetailView extends TView {
     default void getProfileSuccess() {
 
     }
+
+    default void getPaymentWeChatSuccess(String s) {
+
+    }
+
+    default void getPaymentWeChatError() {
+
+    }
 }

@@ -56,9 +56,6 @@ public class ExaminationDetailActivity extends OfficialMVPActivity<DetailView, D
         GridLayoutManager ms = new GridLayoutManager(context, 4);
         mBinding.detailEnvironmentRv.setLayoutManager(ms);
         itemImageAdapter = new DetailPhotoAdapter(null);
-        itemImageAdapter.setOnItemClickListener((adapter, view, position) -> {
-            skipActivity(ExaminationPayActivity.class);
-        });
         mBinding.detailEnvironmentRv.setAdapter(itemImageAdapter);
 
         mBinding.detailTestRv.setLayoutManager(new LinearLayoutManager(context));
@@ -81,6 +78,7 @@ public class ExaminationDetailActivity extends OfficialMVPActivity<DetailView, D
             examDetailBean = bean;
             DemoUtils.bindImageViewC(context,bean.getImage(),5,mBinding.detailImage);
             mBinding.detailName.setText(bean.getName());
+            detailTestAdapter.setItemName(bean.getItem_name());
             mBinding.detailAddress.setText("地址："+bean.getAddress());
             detailTestAdapter.setNewData(bean.getItems());
             itemImageAdapter.setNewData(bean.getImages());

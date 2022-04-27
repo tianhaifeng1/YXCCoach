@@ -1,7 +1,9 @@
 package com.example.module_common.official;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
@@ -114,6 +116,18 @@ public abstract class OfficialMVPActivity<V extends TView, P extends TPresenter<
             InputMethodManager manager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             manager.hideSoftInputFromWindow(token, InputMethodManager.HIDE_NOT_ALWAYS);
         }
+    }
+
+    public static void showAlert(Context ctx, String info) {
+        showAlert(ctx, info, null);
+    }
+
+    public static void showAlert(Context ctx, String info, DialogInterface.OnDismissListener onDismiss) {
+        new AlertDialog.Builder(ctx)
+                .setMessage(info)
+                .setPositiveButton("确定", null)
+                .setOnDismissListener(onDismiss)
+                .show();
     }
 
     /**

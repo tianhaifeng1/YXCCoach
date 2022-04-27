@@ -9,6 +9,7 @@ import com.example.module_common.official.OfficialPresenter;
 import com.example.module_common.rxhttp.OnError;
 import com.lovezly.coach.bean.ExamIndexBean;
 import com.lovezly.coach.bean.OrderListBean;
+import com.lovezly.coach.bean.SelectDateBean;
 import com.lovezly.coach.bean.UserInfoBean;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
@@ -37,7 +38,20 @@ public class FragmentPresenter extends OfficialPresenter<FragmentView> {
                 });
     }
 
-    /*** 首页 */
+    /*** 日期列表 */
+    @SuppressLint("CheckResult")
+    public void selectdata() {
+        RxHttp.postForm("api/exam/selectdata")       //发送表单形式的post请求
+                .asResponseList(SelectDateBean.class)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(bean -> {
+                    getView().getSelectDateSuccess(bean);
+                }, (OnError) error -> {
+                    ToastUtils.showShort(error.getErrorMsg());
+                });
+    }
+
+    /*** 订单列表 */
     @SuppressLint("CheckResult")
     public void getOrderList(String status,String key,int page) {
         RxHttp.postForm("api/exam/order_list")       //发送表单形式的post请求

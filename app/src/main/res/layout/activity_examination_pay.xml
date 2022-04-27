@@ -83,7 +83,7 @@
                     android:layout_marginLeft="@dimen/dp10"
                     android:layout_marginTop="@dimen/sp18"
                     android:layout_marginBottom="@dimen/dp14"
-                    android:text="考场环境"
+                    android:text="训练学员"
                     android:textColor="#333333"
                     android:textSize="15sp" />
 

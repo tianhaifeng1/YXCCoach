@@ -3,6 +3,7 @@ package com.lovezly.coach.activity;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.Message;
@@ -62,7 +63,9 @@ public class LoginActivity extends OfficialMVPActivity<LoginView, LoginPresenter
             }
         });
         mBinding.loginYhxy.setOnClickListener(view -> {
-            ToastUtils.showShort("协议预留");
+            Intent intent = new Intent(context, YhxyActivity.class);
+            intent.putExtra("type", 1);
+            skipActivity(intent);
         });
         mBinding.loginYzm.setOnClickListener(view -> {
             if (mBinding.loginEditPhone.getText().toString().trim().equals("")) {
@@ -216,5 +219,12 @@ public class LoginActivity extends OfficialMVPActivity<LoginView, LoginPresenter
                 timer = null;
             }
         }
+    }
+
+    @Override
+    protected boolean backBefore() {
+        ToastUtils.showShort("再次点击退出系统");
+        activityManager.exitApp(true);
+        return false;
     }
 }

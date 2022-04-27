@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -99,6 +100,23 @@ public class RegisterActivity extends OfficialMVPActivity<LoginView, LoginPresen
             uploadType = 2;
             getPermission();
         });
+
+        //初始化图库工具
+        Album.initialize(AlbumConfig.newBuilder(context)
+                .setAlbumLoader(new AlbumLoader() {
+                    @Override
+                    public void load(ImageView imageView, AlbumFile albumFile) {
+                        load(imageView, albumFile.getPath());
+                    }
+
+                    @Override
+                    public void load(ImageView imageView, String url) {
+                        //本地大图多选的加载图片，用glide会崩溃
+                        GlideUtile.bindImageView(imageView.getContext(), url, imageView);
+                    }
+                })
+                .setLocale(Locale.CHINA)
+                .build());
     }
 
     @Override
@@ -183,33 +201,6 @@ public class RegisterActivity extends OfficialMVPActivity<LoginView, LoginPresen
                     public void hasPermission(List<String> granted, boolean isAll) {
                         if (isAll) {
                             if (hasSdcard()) {
-                                SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd_HHmmss");
-                                Date curDate = new Date(System.currentTimeMillis());
-
-//                                if (Build.VERSION.SDK_INT >= 29) {
-//                                    //Android10之后
-//                                    path = context.getExternalFilesDir(null) + "/Graph/Image/" + formatter.format(curDate) + ".jpg";
-//                                } else {
-//                                    path = Environment.getExternalStorageDirectory() + "/Graph/Image/" + formatter.format(curDate) + ".jpg";
-//                                }
-
-                                //初始化图库工具
-                                Album.initialize(AlbumConfig.newBuilder(context)
-                                        .setAlbumLoader(new AlbumLoader() {
-                                            @Override
-                                            public void load(ImageView imageView, AlbumFile albumFile) {
-                                                load(imageView, albumFile.getPath());
-                                            }
-
-                                            @Override
-                                            public void load(ImageView imageView, String url) {
-                                                //本地大图多选的加载图片，用glide会崩溃
-                                                GlideUtile.bindImageView(imageView.getContext(), url, imageView);
-                                            }
-                                        })
-                                        .setLocale(Locale.CHINA)
-                                        .build());
-
                                 Album.image(context) // Image selection.
                                         .multipleChoice()
                                         .camera(true)

@@ -108,7 +108,7 @@ public class DemoUtils {
      */
     public static String timeStamp2Date(long time, String format) {
         if (format == null || format.isEmpty()) {
-            format = "MM月dd日 HH:mm";
+            format = "yyyy年MM月dd日 HH:mm";
         }
         SimpleDateFormat sdf = new SimpleDateFormat(format);
         return sdf.format(new Date(time * 1000));

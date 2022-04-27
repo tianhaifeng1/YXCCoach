@@ -14,6 +14,7 @@ import com.scwang.smart.refresh.layout.api.RefreshHeader;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
 import com.scwang.smart.refresh.layout.listener.DefaultRefreshFooterCreator;
 import com.scwang.smart.refresh.layout.listener.DefaultRefreshHeaderCreator;
+import com.tencent.bugly.Bugly;
 
 import org.apache.http.conn.ssl.AllowAllHostnameVerifier;
 
@@ -53,6 +54,8 @@ public class OfficialApplication extends InitApplication {
                 return p.addHeader("token", DemoConstant.token); //添加公共请求头
             }
         });
+
+        Bugly.init(getApplicationContext(), "0aa4da964f", false);
     }
 
     public static Context getContext() {

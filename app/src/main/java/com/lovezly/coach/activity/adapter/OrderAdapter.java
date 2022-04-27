@@ -20,12 +20,12 @@ public class OrderAdapter extends BaseQuickAdapter<OrderListBean.DataBean, BaseV
     @Override
     protected void convert(BaseViewHolder helper, OrderListBean.DataBean item) {
         helper.setText(R.id.item_order_name, item.getName());
-        String status  = "";
-        if(item.getPay_status() == 0){
+        String status = "";
+        if (item.getPay_status() == 0) {
             status = "未支付";
-        }else if(item.getPay_status() == 1) {
+        } else if (item.getPay_status() == 1) {
             status = "已支付";
-        }else if(item.getPay_status() == -1) {
+        } else if (item.getPay_status() == -1) {
             status = "已取消";
         }
         helper.setText(R.id.item_order_status, status);
@@ -38,7 +38,7 @@ public class OrderAdapter extends BaseQuickAdapter<OrderListBean.DataBean, BaseV
             students += bean.getName() + "、";
         }
         helper.setText(R.id.item_order_student, students);
-        helper.setText(R.id.item_order_paytime, item.getPaytime());
-        helper.setText(R.id.item_order_price, "￥"+ DemoUtils.ToDouble(item.getPrice()));
+        helper.setText(R.id.item_order_paytime, item.getPaytime().equals("0") ? "无" : DemoUtils.timeStamp2Date(Long.parseLong(item.getPaytime()), null));
+        helper.setText(R.id.item_order_price, "￥" + DemoUtils.ToDouble(item.getTotal_price()));
     }
 }

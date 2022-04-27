@@ -16,8 +16,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
 import com.bigkoo.pickerview.builder.TimePickerBuilder;
+import com.bigkoo.pickerview.listener.OnOptionsSelectListener;
 import com.bigkoo.pickerview.listener.OnTimeSelectListener;
+import com.bigkoo.pickerview.view.OptionsPickerView;
 import com.bigkoo.pickerview.view.TimePickerView;
 import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -28,6 +31,7 @@ import com.lovezly.coach.R;
 import com.lovezly.coach.activity.adapter.MainAdapter;
 import com.lovezly.coach.activity.detail.ExaminationDetailActivity;
 import com.lovezly.coach.bean.ExamIndexBean;
+import com.lovezly.coach.bean.SelectDateBean;
 import com.lovezly.coach.databinding.FragmentMainOneBinding;
 import com.lovezly.coach.databinding.FragmentMainTwoBinding;
 import com.lovezly.coach.util.DemoUtils;
@@ -38,8 +42,10 @@ import com.scwang.smart.refresh.layout.constant.RefreshState;
 import com.scwang.smart.refresh.layout.listener.OnMultiListener;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class MainTwoFragment extends OfficialMVPFragment<FragmentView, FragmentPresenter> implements FragmentView {
 
@@ -132,6 +138,8 @@ public class MainTwoFragment extends OfficialMVPFragment<FragmentView, FragmentP
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 index = 1;
+                mBinding.twoCc.setText("训练场次");
+                bookDate = "";
                 initData();
             }
 
@@ -145,7 +153,8 @@ public class MainTwoFragment extends OfficialMVPFragment<FragmentView, FragmentP
         initAdapter();
 
         mBinding.twoCcLin.setOnClickListener(view1 -> {
-            onYearMonthDayTimePicker();
+//            onYearMonthDayTimePicker();
+            onSelectDate();
         });
     }
 
@@ -169,6 +178,14 @@ public class MainTwoFragment extends OfficialMVPFragment<FragmentView, FragmentP
     public void initData() {
         super.initData();
         getPresenter().getExamIndex(bookDate,mBinding.twoSearch.getText().toString().trim(),index,2);
+        getPresenter().selectdata();
+    }
+
+    private List<SelectDateBean> selectDateBeans = new ArrayList<>();
+
+    @Override
+    public void getSelectDateSuccess(List<SelectDateBean> bean) {
+        selectDateBeans = bean;
     }
 
     @Override
@@ -188,6 +205,32 @@ public class MainTwoFragment extends OfficialMVPFragment<FragmentView, FragmentP
 
     private String bookDate = "";
 
+    public void onSelectDate() {
+        if (selectDateBeans != null && selectDateBeans.size() > 0) {
+            List<String> option1 = new ArrayList<>();
+            for (SelectDateBean date : selectDateBeans) {
+                option1.add(date.getBook_date());
+            }
+            OptionsPickerView pvOptions = new OptionsPickerBuilder(activity, new OnOptionsSelectListener() {
+                @Override
+                public void onOptionsSelect(int options1, int option2, int options3, View v) {
+                    bookDate = option1.get(options1);
+                    index = 1;
+                    initData();
+                    mBinding.twoCc.setText(bookDate);
+                }
+            }).setTitleText("请选择")
+                    .setContentTextSize(16)//滚轮文字大小
+                    .setLineSpacingMultiplier((float) 2.0)
+                    .setOutSideCancelable(false)
+                    .build();
+            pvOptions.setPicker(option1);
+            pvOptions.show();
+        } else {
+            ToastUtils.showShort("暂无场次");
+        }
+    }
+
     public void onYearMonthDayTimePicker() {
         Calendar startDate = Calendar.getInstance();
         //startDate.set(2013,1,1);
@@ -201,7 +244,7 @@ public class MainTwoFragment extends OfficialMVPFragment<FragmentView, FragmentP
         TimePickerView pvTime = new TimePickerBuilder(activity, new OnTimeSelectListener() {
             @Override
             public void onTimeSelect(Date date, View v) {
-                SimpleDateFormat format = new SimpleDateFormat("yyyy-M-dd");
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
                 bookDate = format.format(date);
                 initData();
                 mBinding.twoCc.setText(format.format(date));
